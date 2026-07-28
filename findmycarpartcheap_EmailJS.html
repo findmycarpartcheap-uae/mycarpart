@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>findmycarpartcheap — Sourced in the UAE, shipped to your door</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --asphalt:#1B1E21;
+    --asphalt-2:#25292D;
+    --concrete:#EDEAE2;
+    --concrete-2:#E2DED3;
+    --steel:#4B5561;
+    --amber:#F2A61C;
+    --amber-dim:#C98A17;
+    --rust:#B5482B;
+    --ink:#17181A;
+    --paper:#F5F3ED;
+    --line:rgba(255,255,255,0.10);
+    --line-dark:rgba(0,0,0,0.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--concrete);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    font-weight:600;
+  }
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 28px;}
+
+  /* Prefers reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--asphalt);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px; max-width:1120px; margin:0 auto;
+  }
+  .logo{
+    color:var(--paper);
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:1.15rem;
+    letter-spacing:0.02em;
+    text-transform:uppercase;
+    display:flex; align-items:baseline; gap:2px;
+  }
+  .logo span{color:var(--amber);}
+  .nav-links{display:flex; gap:28px; list-style:none;}
+  .nav-links a{
+    color:var(--concrete-2);
+    text-decoration:none;
+    font-size:0.85rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    font-weight:500;
+    transition:color .15s ease;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible{color:var(--amber);}
+  .nav-cta{
+    background:var(--amber);
+    color:var(--ink);
+    padding:9px 18px;
+    font-size:0.82rem;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    text-decoration:none;
+    border:1px solid var(--amber);
+    transition:background .15s ease, color .15s ease;
+  }
+  .nav-cta:hover{background:transparent; color:var(--amber);}
+  .nav-toggle{display:none;}
+  .nav-tagline{
+    font-size:0.7rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--amber);
+    opacity:0.85;
+  }
+  @media (max-width: 640px){ .nav-tagline{display:none;} }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--asphalt);
+    color:var(--paper);
+    padding:88px 0 96px;
+    position:relative;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.035) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.035) 40px);
+    pointer-events:none;
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:56px;
+    align-items:center;
+    position:relative;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    color:var(--amber);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:8px; height:8px;
+    background:var(--amber);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 3.6rem);
+    line-height:1.05;
+    margin-bottom:22px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--amber);
+  }
+  .hero p.lede{
+    font-size:1.08rem;
+    color:var(--concrete-2);
+    max-width:46ch;
+    margin-bottom:32px;
+  }
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:14px 26px;
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    font-size:0.9rem;
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .12s ease, background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{background:var(--amber); color:var(--ink);}
+  .btn-primary:hover{background:var(--amber-dim);}
+  .btn-ghost{
+    background:transparent; color:var(--paper);
+    border-color:rgba(255,255,255,0.35);
+  }
+  .btn-ghost:hover{border-color:var(--amber); color:var(--amber);}
+
+  /* Tag visual — signature element */
+  .tag{
+    background:var(--paper);
+    color:var(--ink);
+    position:relative;
+    padding:26px 26px 22px;
+    border-radius:2px;
+    box-shadow:0 24px 48px rgba(0,0,0,0.35);
+    transform:rotate(2deg);
+  }
+  .tag::before{
+    content:"";
+    position:absolute;
+    top:-9px; left:50%;
+    transform:translateX(-50%);
+    width:18px; height:18px;
+    background:var(--asphalt);
+    border:2px solid var(--concrete-2);
+    border-radius:50%;
+  }
+  .tag::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; top:44px;
+    height:0;
+    border-top:2px dashed rgba(0,0,0,0.18);
+  }
+  .tag-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--steel);
+    margin-bottom:14px;
+  }
+  .tag-body{padding-top:22px;}
+  .tag-row{
+    display:flex; justify-content:space-between;
+    padding:9px 0;
+    border-bottom:1px solid var(--line-dark);
+    font-size:0.88rem;
+  }
+  .tag-row:last-child{border-bottom:none;}
+  .tag-row .k{color:var(--steel); font-family:'IBM Plex Mono', monospace; font-size:0.76rem; text-transform:uppercase; letter-spacing:0.03em;}
+  .tag-row .v{font-weight:600;}
+  .tag-status{
+    margin-top:16px;
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(178,72,20,0.12);
+    color:var(--rust);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    padding:6px 12px;
+  }
+  .tag-status::before{content:"●"; font-size:0.6rem;}
+
+  /* ---------- SECTION SHELLS ---------- */
+  section{padding:88px 0;}
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--rust);
+    margin-bottom:12px;
+    display:block;
+  }
+  .section-head h2{font-size:clamp(1.7rem, 3.2vw, 2.3rem); margin-bottom:14px;}
+  .section-head p{color:var(--steel); font-size:1.02rem; max-width:56ch;}
+
+  /* ---------- WHY / VALUE ---------- */
+  .value-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line-dark);
+    border:1px solid var(--line-dark);
+  }
+  .value-card{
+    background:var(--concrete);
+    padding:34px 30px;
+  }
+  .value-card .num{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--rust);
+    font-size:0.8rem;
+    display:block;
+    margin-bottom:14px;
+  }
+  .value-card h3{font-size:1.05rem; margin-bottom:10px; text-transform:none; letter-spacing:0;}
+  .value-card p{color:var(--steel); font-size:0.94rem;}
+
+  /* ---------- PROCESS ---------- */
+  .process{background:var(--asphalt); color:var(--paper);}
+  .process .section-label{color:var(--amber);}
+  .process .section-head p{color:var(--concrete-2);}
+  .process-list{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:0;
+    counter-reset:step;
+    border-top:1px solid var(--line);
+  }
+  .step{
+    padding:30px 24px 30px 0;
+    border-right:1px solid var(--line);
+    position:relative;
+  }
+  .step:last-child{border-right:none;}
+  .step .tagno{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--amber);
+    font-size:0.78rem;
+    display:block;
+    margin-bottom:16px;
+  }
+  .step h3{
+    font-size:1rem;
+    text-transform:none;
+    letter-spacing:0;
+    margin-bottom:10px;
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:600;
+  }
+  .step p{color:var(--concrete-2); font-size:0.92rem;}
+
+  /* ---------- TRUST BADGES ---------- */
+  .badges{
+    background:var(--concrete);
+    border-bottom:1px solid var(--line-dark);
+  }
+  .badges .wrap{
+    display:flex; justify-content:center; gap:0;
+    flex-wrap:wrap;
+    padding:22px 28px;
+  }
+  .badge{
+    display:flex; align-items:center; gap:9px;
+    padding:10px 26px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:var(--steel);
+    border-right:1px solid var(--line-dark);
+  }
+  .badge:last-child{border-right:none;}
+  .badge .dot{color:var(--rust); font-size:0.9rem;}
+  @media (max-width: 700px){
+    .badge{border-right:none; padding:8px 16px;}
+  }
+
+  /* ---------- SUPPLY SOURCE STRIP ---------- */
+  .source-strip{
+    background:var(--concrete-2);
+    border-top:1px solid var(--line-dark);
+    border-bottom:1px solid var(--line-dark);
+    padding:20px 0;
+  }
+  .source-strip .wrap{
+    display:flex; align-items:center; justify-content:center; gap:14px;
+    flex-wrap:wrap;
+    text-align:center;
+  }
+  .source-strip p{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    letter-spacing:0.03em;
+    color:var(--steel);
+  }
+  .source-strip strong{color:var(--ink);}
+
+  /* ---------- FORM ---------- */
+  .request{background:var(--paper);}
+  .request-shell{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:0;
+    border:1px solid var(--line-dark);
+    background:var(--concrete);
+  }
+  .request-side{
+    background:var(--asphalt);
+    color:var(--paper);
+    padding:48px 40px;
+  }
+  .request-side .section-label{color:var(--amber);}
+  .request-side h2{font-size:1.7rem; margin-bottom:18px;}
+  .request-side p{color:var(--concrete-2); margin-bottom:22px; font-size:0.96rem;}
+  .request-side ul{list-style:none; display:flex; flex-direction:column; gap:12px;}
+  .request-side li{
+    display:flex; gap:10px; align-items:flex-start;
+    font-size:0.9rem; color:var(--concrete-2);
+  }
+  .request-side li::before{
+    content:"—";
+    color:var(--amber);
+    flex-shrink:0;
+  }
+  .request-form{padding:48px 40px;}
+  .field{margin-bottom:20px;}
+  .field label{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.74rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--steel);
+    margin-bottom:8px;
+  }
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  input, textarea, select{
+    width:100%;
+    background:var(--paper);
+    border:1px solid var(--line-dark);
+    padding:12px 14px;
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:0.94rem;
+    color:var(--ink);
+  }
+  input:focus, textarea:focus, select:focus{
+    outline:2px solid var(--amber);
+    outline-offset:1px;
+  }
+  textarea{resize:vertical; min-height:96px;}
+  .submit-row{
+    display:flex; align-items:center; gap:16px; margin-top:8px; flex-wrap:wrap;
+  }
+  .form-note{font-size:0.82rem; color:var(--steel);}
+  #confirmation{
+    display:none;
+    margin-top:20px;
+    padding:16px 18px;
+    background:rgba(178,72,20,0.08);
+    border-left:3px solid var(--rust);
+    font-size:0.9rem;
+  }
+  #confirmation.show{display:block;}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{border-top:1px solid var(--line-dark);}
+  .faq-item{border-bottom:1px solid var(--line-dark);}
+  .faq-q{
+    width:100%;
+    text-align:left;
+    background:none;
+    border:none;
+    padding:22px 0;
+    display:flex; justify-content:space-between; align-items:center;
+    cursor:pointer;
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:1rem;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .faq-q .plus{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--rust);
+    font-size:1.2rem;
+    transition:transform .2s ease;
+  }
+  .faq-item[data-open="true"] .plus{transform:rotate(45deg);}
+  .faq-a{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .25s ease;
+    color:var(--steel);
+    font-size:0.94rem;
+  }
+  .faq-a-inner{padding-bottom:22px; max-width:66ch;}
+  .faq-item[data-open="true"] .faq-a{max-height:240px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--asphalt);
+    color:var(--concrete-2);
+    padding:56px 0 28px;
+  }
+  .footer-top{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    gap:40px; flex-wrap:wrap;
+    padding-bottom:36px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:24px;
+  }
+  .footer-top .logo{margin-bottom:14px;}
+  .footer-top p{max-width:36ch; font-size:0.9rem; color:var(--concrete-2);}
+  .footer-cols{display:flex; gap:56px; flex-wrap:wrap;}
+  .footer-col h4{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--amber);
+    margin-bottom:14px;
+  }
+  .footer-col ul{list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .footer-col a{color:var(--concrete-2); text-decoration:none; font-size:0.9rem;}
+  .footer-col a:hover{color:var(--amber);}
+  .footer-bottom{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:0.8rem; color:var(--steel);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px){
+    .hero-inner{grid-template-columns:1fr;}
+    .tag{transform:rotate(0deg); margin-top:12px;}
+    .value-grid{grid-template-columns:1fr;}
+    .process-list{grid-template-columns:1fr 1fr;}
+    .step{border-right:none; border-bottom:1px solid var(--line); padding:24px 0;}
+    .request-shell{grid-template-columns:1fr;}
+    .field-row{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div style="display:flex; align-items:baseline; gap:14px;">
+      <a href="#top" class="logo">find<span>mycarpart</span>cheap</a>
+      <span class="mono nav-tagline">Worldwide OEM Parts</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#why">Why UAE</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#request" class="nav-cta">Request a part</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Sourcing from the UAE</span>
+      <h1>The part you can't find at home<br>is sitting in a yard <em>here</em>.</h1>
+      <p class="lede">The UAE turns over its car fleet fast, which means late-model, low-mileage parts get pulled and priced for a fraction of what dealers elsewhere charge. Tell us what you need — we'll find out if it's out there.</p>
+      <div class="hero-actions">
+        <a href="#request" class="btn btn-primary">Submit a part request</a>
+        <a href="#how" class="btn btn-ghost">How it works</a>
+      </div>
+    </div>
+    <div class="tag">
+      <div class="tag-head">
+        <span>Request No.</span>
+        <span>FMCP-0417</span>
+      </div>
+      <div class="tag-body">
+        <div class="tag-row"><span class="k">Part</span><span class="v">LED headlight, driver-side</span></div>
+        <div class="tag-row"><span class="k">Vehicle</span><span class="v">2019 BMW 520i</span></div>
+        <div class="tag-row"><span class="k">Condition</span><span class="v">Used — excellent</span></div>
+        <div class="tag-row"><span class="k">Ship to</span><span class="v">Requesting country</span></div>
+      </div>
+      <span class="tag-status" style="background:rgba(74,124,89,0.14); color:#3F7A52;">In stock</span>
+    </div>
+  </div>
+</section>
+
+<div class="badges">
+  <div class="wrap">
+    <span class="badge"><span class="dot">●</span>OEM Parts</span>
+    <span class="badge"><span class="dot">●</span>Worldwide Shipping</span>
+    <span class="badge"><span class="dot">●</span>Secure Payment</span>
+    <span class="badge"><span class="dot">●</span>UAE Based</span>
+  </div>
+</div>
+
+<div class="source-strip">
+  <div class="wrap">
+    <p>Currently in early access — we're mapping demand before we scale sourcing. <strong>No payment is taken until a part is confirmed.</strong></p>
+  </div>
+</div>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-label">Why the UAE</span>
+      <h2>A country that replaces cars faster than it wears them out.</h2>
+      <p>Short ownership cycles and a preference for newer models mean a steady stream of low-mileage vehicles get parted out well before their components would elsewhere. That supply is what makes the pricing possible.</p>
+    </div>
+    <div class="value-grid">
+      <div class="value-card">
+        <span class="num">01</span>
+        <h3>Late-model supply</h3>
+        <p>Vehicles come off the road younger here, so salvaged parts are often only a few years old — not decades.</p>
+      </div>
+      <div class="value-card">
+        <span class="num">02</span>
+        <h3>Lower local pricing</h3>
+        <p>The same part that's scarce and marked up abroad is routine stock in a UAE yard, priced accordingly.</p>
+      </div>
+      <div class="value-card">
+        <span class="num">03</span>
+        <h3>One point of contact</h3>
+        <p>You deal with us, not a yard you've never heard of. We handle sourcing, condition checks, and shipping.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-label">Process</span>
+      <h2>Four steps, start to finish.</h2>
+      <p>No account, no upfront payment. You submit what you need — we do the legwork and come back with a real answer.</p>
+    </div>
+    <div class="process-list">
+      <div class="step">
+        <span class="tagno">01 / Request</span>
+        <h3>You tell us the part</h3>
+        <p>Make, model, year, and what's broken or missing — the more detail, the faster we can search.</p>
+      </div>
+      <div class="step">
+        <span class="tagno">02 / Search</span>
+        <h3>We check UAE yards</h3>
+        <p>We reach out to our sourcing contacts across the UAE to find matching stock and condition photos.</p>
+      </div>
+      <div class="step">
+        <span class="tagno">03 / Quote</span>
+        <h3>You get a straight price</h3>
+        <p>Part cost, condition, and shipping to your country — one number, no hidden markup on the way.</p>
+      </div>
+      <div class="step">
+        <span class="tagno">04 / Ship</span>
+        <h3>We handle the rest</h3>
+        <p>If you accept, we purchase, package, and ship. You're not put in touch with the yard directly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="request" id="request">
+  <div class="wrap">
+    <div class="request-shell">
+      <div class="request-side">
+        <span class="section-label">Submit a request</span>
+        <h2>What are you looking for?</h2>
+        <p>We're in early access, so every request is read personally and used to figure out what's worth stocking or sourcing on demand. There's no fee and no commitment at this stage.</p>
+        <ul>
+          <li>Free to submit — no research fee right now</li>
+          <li>We reply with a quote only if the part turns up</li>
+          <li>Your details go to us alone, never to a third-party seller</li>
+        </ul>
+      </div>
+      <form class="request-form" id="partForm">
+        <div class="field-row">
+          <div class="field">
+            <label for="make">Vehicle make</label>
+            <input type="text" id="make" name="make" placeholder="e.g. Toyota" required>
+          </div>
+          <div class="field">
+            <label for="model">Model &amp; year</label>
+            <input type="text" id="model" name="model" placeholder="e.g. Land Cruiser, 2021" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="part">Part needed</label>
+          <input type="text" id="part" name="part" placeholder="e.g. Front bumper assembly, driver-side" required>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="country">Shipping to (country)</label>
+            <input type="text" id="country" name="country" placeholder="e.g. Germany" required>
+          </div>
+          <div class="field">
+            <label for="email">Your email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="details">Additional details</label>
+          <textarea id="details" name="details" placeholder="VIN, trim level, photos you can share, condition needed..."></textarea>
+        </div>
+        <div class="submit-row">
+          <button type="submit" class="btn btn-primary">Submit request</button>
+          <span class="form-note">We'll reply by email once we've checked availability.</span>
+        </div>
+        <div id="confirmation"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-label">Questions</span>
+      <h2>Before you ask.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item" data-open="false">
+        <button class="faq-q">Does this cost anything to try?<span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Not right now. We're validating demand before charging anything, so submitting a request is free. If that changes, we'll say so clearly before you commit to anything.</div></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-q">How do you keep prices lower than local options?<span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">The UAE has an unusually young, high-turnover vehicle fleet, so salvage parts here are newer and more plentiful than in most markets — that supply is what drives the price down, not a shortcut on quality.</div></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-q">Will I be able to buy directly from your suppliers?<span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">No — sourcing, invoicing, and shipping all run through us. It keeps quality and pricing consistent, and means you have one place to go if anything's wrong with an order.</div></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-q">How long does a quote take?<span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">It depends on how common the part is. We reply by email either way, whether or not we've found a match.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a href="#top" class="logo">find<span>mycarpart</span>cheap</a>
+        <p>Sourcing used and salvage car parts from the UAE and shipping them worldwide, one request at a time.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#why">Why UAE</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="#request">Submit a request</a></li>
+            <li><a href="mailto:hello@findmycarpartcheap.com">hello@findmycarpartcheap.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 findmycarpartcheap. Early access.</span>
+      <span>Based in the UAE</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init({publicKey:"muEqYeSUIMu2Oi7pE"});document.querySelectorAll('.faq-item').forEach(item=>{item.querySelector('.faq-q').addEventListener('click',()=>{const o=item.getAttribute('data-open')==='true';document.querySelectorAll('.faq-item').forEach(i=>i.setAttribute('data-open','false'));item.setAttribute('data-open',o?'false':'true');});});const form=document.getElementById("partForm");const confirmation=document.getElementById("confirmation");form.addEventListener("submit",function(e){e.preventDefault();confirmation.classList.add("show");confirmation.innerHTML="Sending request...";emailjs.sendForm("service_nklhch5","template_t8djxuw",this).then(()=>{confirmation.innerHTML="✅ Thank you! Your request has been sent successfully.";form.reset();}).catch(()=>{confirmation.innerHTML="❌ Failed to send request.";});});</script></body>
+</html>
