@@ -1,9 +1,49 @@
+      
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>findmycarpartcheap — Sourced in the UAE, shipped to your door</title>
+
+<!-- ===================== SEO / META ADDITIONS ===================== -->
+<meta name="description" content="Find cheap OEM and used car parts sourced from the UAE and shipped worldwide. Submit a part request — no upfront payment, no account needed.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://findmycarpartcheap-uae.github.io/mycarpart/">
+
+<link rel="alternate" hreflang="en" href="https://findmycarpartcheap-uae.github.io/mycarpart/">
+<link rel="alternate" hreflang="tr" href="https://findmycarpartcheap-uae.github.io/mycarpart/tr/">
+<link rel="alternate" hreflang="x-default" href="https://findmycarpartcheap-uae.github.io/mycarpart/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="findmycarpartcheap — Sourced in the UAE, shipped to your door">
+<meta property="og:description" content="Find cheap OEM and used car parts sourced from the UAE and shipped worldwide. Submit a part request — no upfront payment, no account needed.">
+<meta property="og:url" content="https://findmycarpartcheap-uae.github.io/mycarpart/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta property="og:site_name" content="findmycarpartcheap">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="findmycarpartcheap — Sourced in the UAE, shipped to your door">
+<meta name="twitter:description" content="Cheap OEM and used car parts sourced from the UAE, shipped worldwide.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "findmycarpartcheap",
+  "url": "https://findmycarpartcheap-uae.github.io/mycarpart/",
+  "email": "hello@findmycarpartcheap.com",
+  "areaServed": "Worldwide",
+  "description": "Sourcing used and salvage OEM car parts from the UAE and shipping them worldwide, one request at a time.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "AE"
+  }
+}
+</script>
+<!-- =================== END SEO / META ADDITIONS ==================== -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -42,12 +82,10 @@
   img{max-width:100%; display:block;}
   .wrap{max-width:1120px; margin:0 auto; padding:0 28px;}
 
-  /* Prefers reduced motion */
   @media (prefers-reduced-motion: reduce){
     *{animation:none !important; transition:none !important;}
   }
 
-  /* ---------- NAV ---------- */
   header{
     position:sticky; top:0; z-index:50;
     background:var(--asphalt);
@@ -101,7 +139,6 @@
   }
   @media (max-width: 640px){ .nav-tagline{display:none;} }
 
-  /* ---------- HERO ---------- */
   .hero{
     background:var(--asphalt);
     color:var(--paper);
@@ -178,7 +215,6 @@
   }
   .btn-ghost:hover{border-color:var(--amber); color:var(--amber);}
 
-  /* Tag visual — signature element */
   .tag{
     background:var(--paper);
     color:var(--ink);
@@ -237,7 +273,6 @@
   }
   .tag-status::before{content:"●"; font-size:0.6rem;}
 
-  /* ---------- SECTION SHELLS ---------- */
   section{padding:88px 0;}
   .section-head{max-width:640px; margin-bottom:52px;}
   .section-label{
@@ -252,7 +287,6 @@
   .section-head h2{font-size:clamp(1.7rem, 3.2vw, 2.3rem); margin-bottom:14px;}
   .section-head p{color:var(--steel); font-size:1.02rem; max-width:56ch;}
 
-  /* ---------- WHY / VALUE ---------- */
   .value-grid{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
@@ -274,7 +308,6 @@
   .value-card h3{font-size:1.05rem; margin-bottom:10px; text-transform:none; letter-spacing:0;}
   .value-card p{color:var(--steel); font-size:0.94rem;}
 
-  /* ---------- PROCESS ---------- */
   .process{background:var(--asphalt); color:var(--paper);}
   .process .section-label{color:var(--amber);}
   .process .section-head p{color:var(--concrete-2);}
@@ -308,7 +341,6 @@
   }
   .step p{color:var(--concrete-2); font-size:0.92rem;}
 
-  /* ---------- TRUST BADGES ---------- */
   .badges{
     background:var(--concrete);
     border-bottom:1px solid var(--line-dark);
@@ -334,7 +366,6 @@
     .badge{border-right:none; padding:8px 16px;}
   }
 
-  /* ---------- SUPPLY SOURCE STRIP ---------- */
   .source-strip{
     background:var(--concrete-2);
     border-top:1px solid var(--line-dark);
@@ -354,7 +385,6 @@
   }
   .source-strip strong{color:var(--ink);}
 
-  /* ---------- FORM ---------- */
   .request{background:var(--paper);}
   .request-shell{
     display:grid;
@@ -421,7 +451,6 @@
   }
   #confirmation.show{display:block;}
 
-  /* ---------- FAQ ---------- */
   .faq-list{border-top:1px solid var(--line-dark);}
   .faq-item{border-bottom:1px solid var(--line-dark);}
   .faq-q{
@@ -454,7 +483,6 @@
   .faq-a-inner{padding-bottom:22px; max-width:66ch;}
   .faq-item[data-open="true"] .faq-a{max-height:240px;}
 
-  /* ---------- FOOTER ---------- */
   footer{
     background:var(--asphalt);
     color:var(--concrete-2);
@@ -486,7 +514,6 @@
     font-size:0.8rem; color:var(--steel);
   }
 
-  /* ---------- RESPONSIVE ---------- */
   @media (max-width: 860px){
     .hero-inner{grid-template-columns:1fr;}
     .tag{transform:rotate(0deg); margin-top:12px;}
@@ -511,6 +538,7 @@
       <li><a href="#how">How it works</a></li>
       <li><a href="#why">Why UAE</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li><a href="tr/">Türkçe</a></li>
     </ul>
     <a href="#request" class="nav-cta">Request a part</a>
   </nav>
