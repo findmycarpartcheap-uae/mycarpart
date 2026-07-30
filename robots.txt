@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://findmycarpartcheap-uae.github.io/mycarpart/sitemap.xml
